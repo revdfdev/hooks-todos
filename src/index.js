@@ -5,12 +5,14 @@ import TodoReducer from "./reducer";
 import * as serviceWorker from "./serviceWorker";
 
 import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
 const App = () => {
   const initialState = useContext(TodoContext);
   const [state, dispatch] = useReducer(TodoReducer, initialState);
   return (
     <TodoContext.Provider value={{ state, dispatch }}>
+      <TodoForm />
       <TodoList />
     </TodoContext.Provider>
   );
